@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+
+a {
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+a:hover {
+  opacity: 0.6;
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  padding: 64px 0px;
+}
+
+header p {
+  font-size: 2rem;
+}
+
+section {
+  width: 220px;
+  margin: 0 auto;
+}
+
+section p {
+  font-size: 1.4rem;
+}
