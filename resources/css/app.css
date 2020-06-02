@@ -12,6 +12,9 @@
 a {
   -webkit-transition: 0.1s;
   transition: 0.1s;
+
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 a:hover {
