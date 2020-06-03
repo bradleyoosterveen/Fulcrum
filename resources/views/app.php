@@ -11,5 +11,7 @@
     </head>
     <body>
         <?php require_once(Core\Router::$view); ?>
+
+        <script src="../resources/js/scripts.js"></script>
     </body>
 </html>
