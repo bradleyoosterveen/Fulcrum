@@ -12,7 +12,6 @@
 a {
   -webkit-transition: 0.1s;
   transition: 0.1s;
-
   text-decoration: underline;
   cursor: pointer;
 }
@@ -50,3 +49,4 @@ section {
 section p {
   font-size: 1.4rem;
 }
+/*# sourceMappingURL=app.css.map */
