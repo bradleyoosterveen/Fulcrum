@@ -1,5 +1,10 @@
 <?php
     /**
+     * Use the Composer autoloader
+     */
+    require __DIR__.'/../vendor/autoload.php';
+
+    /**
      * Autoload classes
      */
     spl_autoload_register(function ($class) {
@@ -14,7 +19,7 @@
     /**
      * Include web routes
      */
-    require_once('routes/web.php');
+    require __DIR__.'/../routes/web.php';
 
     /**
      * Handle response

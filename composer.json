@@ -1,0 +1,14 @@
+{
+  "name": "fulcrum/fulcrum-framework",
+  "type": "project",
+  "description": "An attempt at a PHP framework, Fulcrum.",
+  "keywords": [
+    "framework",
+    "fulcrum",
+    "php"
+  ],
+  "license": "MIT",
+  "require": {
+
+  }
+}
