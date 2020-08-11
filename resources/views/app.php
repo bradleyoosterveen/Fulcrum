@@ -12,6 +12,6 @@
     <body>
         <?php require_once __DIR__.Core\Router::$view; ?>
 
-        <script src="js/scripts.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
