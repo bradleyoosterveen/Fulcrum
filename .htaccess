@@ -1,8 +1,14 @@
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-f
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
+
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php?path=$1 [NC,L,QSA]
-RewriteRule ^_ - [F,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ index.php [QSA,L]
 Options -Indexes
 
 ErrorDocument 403 /
