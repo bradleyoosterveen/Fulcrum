@@ -1,5 +1,28 @@
 <?php
     /**
-     * Strap in
+     * Use the Composer autoloader
      */
-    require_once __DIR__.'/../app/bootstrap.php';
+    require __DIR__.'/../vendor/autoload.php';
+
+    /**
+     * Include Fulcrum autoloader
+     */
+    require __DIR__ . '/../app/Core/Autoloader.php';
+
+    /**
+     * You know what? Let's launch Fulcrum
+     */
+    require __DIR__ . '/../app/App.php';
+
+    $app = new Core\App();
+
+    $app->launch();
+    /**
+     * Include web routes
+     */
+    require __DIR__.'/../routes/web.php';
+
+    /**
+     * Handle response
+     */
+    Core\Response::handle();
