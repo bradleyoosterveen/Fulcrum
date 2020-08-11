@@ -6,7 +6,7 @@
 
     class Config
     {
-        public static function load()
+        public static function start()
         {
             $ini = parse_ini_file($_SERVER['DOCUMENT_ROOT'].'config.ini', true);
 
