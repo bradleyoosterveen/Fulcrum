@@ -9,6 +9,19 @@
         public static $view;
         public static $title;
 
+        public static function start()
+        {
+            $userDefinedRoutes = [
+                'web.php'
+            ];
+
+            foreach($userDefinedRoutes as $file) {
+                if(file_exists(__DIR__.'/../../routes/'.$file)) {
+                    require_once __DIR__.'/../../routes/'.$file;
+                }
+            }
+        }
+
         /**
          * @param $route
          * @param $view
@@ -37,15 +50,5 @@
 
             if($url[0] === $route)
                 Self::$view = $view;
-
-            $userDefinedRoutes = [
-                'web.php'
-            ];
-
-            foreach($userDefinedRoutes as $file) {
-                if(file_exists($file)) {
-                    require_once __DIR__.'/../../routes/'.$file;
-                }
-            }
         }
     }

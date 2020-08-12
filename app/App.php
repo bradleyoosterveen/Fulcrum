@@ -17,6 +17,7 @@
         {
             Autoloader::start();
             Config::start();
+            Router::start();
 
             return new App();
         }
