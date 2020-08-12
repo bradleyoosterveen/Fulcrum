@@ -17,10 +17,6 @@
     $app = new Core\App();
 
     $app->launch();
-    /**
-     * Include web routes
-     */
-    require __DIR__.'/../routes/web.php';
 
     /**
      * Handle response
