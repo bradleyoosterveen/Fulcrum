@@ -15,7 +15,9 @@
 
         public static function launch()
         {
-            Autoloader::start();
+            Autoloader::start(); // First and foremost
+
+            Session::start();
             Config::start();
             Router::start();
 
