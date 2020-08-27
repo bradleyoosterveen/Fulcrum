@@ -24,13 +24,13 @@
 
         public static function get($route, $view, $title = '')
         {
-            if($_SERVER['REQUEST_METHOD'] !== 'GET') die('Could not find config.ini file. Create one!');
+            if($_SERVER['REQUEST_METHOD'] !== 'GET') die('Request method is not supported for this route.');
             self::handle($route, $view, $title);
         }
 
         public static function post($route, $view, $title = '')
         {
-            if($_SERVER['REQUEST_METHOD'] !== 'post') die('Could not find config.ini file. Create one!');
+            if($_SERVER['REQUEST_METHOD'] !== 'post') die('Request method is not supported for this route.');
             self::handle($route, $view, $title);
         }
 
