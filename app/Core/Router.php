@@ -22,12 +22,24 @@
             }
         }
 
+        public static function get($route, $view, $title = '')
+        {
+            if($_SERVER['REQUEST_METHOD'] !== 'GET') die('Could not find config.ini file. Create one!');
+            self::handle($route, $view, $title);
+        }
+
+        public static function post($route, $view, $title = '')
+        {
+            if($_SERVER['REQUEST_METHOD'] !== 'post') die('Could not find config.ini file. Create one!');
+            self::handle($route, $view, $title);
+        }
+
         /**
          * @param $route
          * @param $view
          * @param string $title
          */
-        public static function url($route, $view, $title = '')
+        private static function handle($route, $view, $title = '')
         {
 
             /**

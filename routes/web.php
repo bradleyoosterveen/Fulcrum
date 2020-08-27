@@ -5,4 +5,4 @@
      * Register your routes here
      */
 
-    Router::url('', '/pages/index/view.php', 'Hello there!');
+    Router::get('', '/pages/index/view.php', 'Hello there!');
