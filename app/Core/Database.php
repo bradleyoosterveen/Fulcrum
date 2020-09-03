@@ -12,7 +12,8 @@
         public $conn;
 
         private $result;
-        private $query;
+        private $preparedQuery;
+        private $binds = [];
 
         private function __construct() {}
 
@@ -37,18 +38,38 @@
 
         function query($query, $params = [])
         {
-            $q = $this->conn->prepare($query);
-
-            if(!$q->execute())
-                return false;
-
-            $this->result = $q->fetchAll();
+            $this->preparedQuery = $this->conn->prepare($query);
 
             return $this;
         }
 
-        function result()
+        function bind($params)
         {
+            foreach ($params as $key => $value)
+                $this->preparedQuery->bindParam(":{$key}", $value);
+
+            return $this;
+        }
+
+        function execute()
+        {
+            if(!$this->preparedQuery->execute())
+                return false;
+
+            return $this;
+        }
+
+        function fetch()
+        {
+            $this->result = $this->preparedQuery->fetch();
+
+            return $this->result;
+        }
+
+        function fetchAll()
+        {
+            $this->result = $this->preparedQuery->fetchAll();
+
             return $this->result;
         }
     }
