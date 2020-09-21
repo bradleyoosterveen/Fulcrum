@@ -30,7 +30,7 @@
 
         public static function post($route, $view, $title = '')
         {
-            if($_SERVER['REQUEST_METHOD'] !== 'post') die('Request method is not supported for this route.');
+            if($_SERVER['REQUEST_METHOD'] !== 'POST') die('Request method is not supported for this route.');
             self::handle($route, $view, $title);
         }
 
