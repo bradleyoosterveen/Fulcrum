@@ -43,16 +43,6 @@
         {
 
             /**
-             * Handle title
-             */
-            $separator = ' &bull; '; // Customize to your liking
-
-            Self::$title = APP_NAME;
-
-            if($title !== '')
-                Self::$title .= $separator . $title;
-
-            /**
              * Handle routing and views
              */
             $url = array_slice(explode("?", $_SERVER['REQUEST_URI']), 0);
@@ -60,7 +50,18 @@
             if(substr($route, 0, 1) !== '/')
                 $route = '/' . $route;
 
-            if($url[0] === $route)
+            if($url[0] === $route) {
+                /**
+                 * Handle title
+                 */
+                $separator = ' &bull; '; // Customize to your liking
+
+                Self::$title = APP_NAME;
+
+                if($title !== '')
+                    Self::$title .= $separator . $title;
+
                 Self::$view = $view;
+            }
         }
     }
