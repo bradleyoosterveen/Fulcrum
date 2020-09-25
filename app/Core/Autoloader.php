@@ -9,7 +9,8 @@
         public static function start()
         {
             spl_autoload_register(function ($class) {
-                include __DIR__.'/../'.$class.'.php';
+                $class = str_replace('\\', DIRECTORY_SEPARATOR, $class); // Enable cross platform
+                include $_SERVER['DOCUMENT_ROOT'].'/app/'.$class.'.php';
             });
         }
     }
