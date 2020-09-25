@@ -12,7 +12,7 @@
     /**
      * You know what? Let's launch Fulcrum
      */
-    require __DIR__ . '/App/App.php';
+    require __DIR__ . '/app/App.php';
 
     $app = new Core\App();
 
