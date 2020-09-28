@@ -9,6 +9,8 @@
         public static $view;
         public static $title;
 
+        private function __construct() {}
+
         public static function start()
         {
             $userDefinedRoutes = [
@@ -22,16 +24,21 @@
             }
         }
 
-        public static function get($route, $view, $title = '')
+        public static function make($route, $view)
         {
-            if($_SERVER['REQUEST_METHOD'] !== 'GET') die('Request method is not supported for this route.');
-            self::handle($route, $view, $title);
+            self::handle($route, $view);
+
+            return new Router;
         }
 
-        public static function post($route, $view, $title = '')
+        function title($title)
         {
-            if($_SERVER['REQUEST_METHOD'] !== 'POST') die('Request method is not supported for this route.');
-            self::handle($route, $view, $title);
+            $separator = ' &bull; '; // Customize to your liking
+
+            Self::$title = APP_NAME;
+
+            if($title !== '')
+                Self::$title .= $separator . $title;
         }
 
         /**
@@ -39,9 +46,8 @@
          * @param $view
          * @param string $title
          */
-        private static function handle($route, $view, $title = '')
+        private static function handle($route, $view)
         {
-
             /**
              * Handle routing and views
              */
@@ -51,16 +57,6 @@
                 $route = '/' . $route;
 
             if($url[0] === $route) {
-                /**
-                 * Handle title
-                 */
-                $separator = ' &bull; '; // Customize to your liking
-
-                Self::$title = APP_NAME;
-
-                if($title !== '')
-                    Self::$title .= $separator . $title;
-
                 Self::$view = $view;
             }
         }
