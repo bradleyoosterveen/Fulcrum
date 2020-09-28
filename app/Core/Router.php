@@ -6,8 +6,8 @@
 
     class Router
     {
-        public static $view;
-        public static $title;
+        private static $view;
+        private static $title;
 
         private function __construct() {}
 
@@ -17,28 +17,6 @@
         }
 
         public static function make($route, $view)
-        {
-            self::handle($route, $view);
-
-            return new Router;
-        }
-
-        function title($title)
-        {
-            $separator = ' &bull; '; // Customize to your liking
-
-            Self::$title = APP_NAME;
-
-            if($title !== '')
-                Self::$title .= $separator . $title;
-        }
-
-        /**
-         * @param $route
-         * @param $view
-         * @param string $title
-         */
-        private static function handle($route, $view)
         {
             /**
              * Handle routing and views
@@ -51,5 +29,43 @@
             if($url[0] === $route) {
                 Self::$view = $view;
             }
+
+            return new Router;
+        }
+
+        function title($title)
+        {
+            $separator = ' &bull; '; // Customize to your liking
+
+            Self::$title = APP_NAME;
+
+            if($title !== '')
+                Self::$title .= $separator . $title;
+
+            return $this;
+        }
+
+        public static function setView($view)
+        {
+            Self::$view = $view;
+
+            return new Router;
+        }
+
+        public static function getView()
+        {
+            return Self::$view;
+        }
+
+        public static function setTitle($title)
+        {
+            Self::$title = $title;
+
+            return new Router;
+        }
+
+        public static function getTitle()
+        {
+            return Self::$title;
         }
     }
