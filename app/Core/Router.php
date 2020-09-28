@@ -18,9 +18,6 @@
 
         public static function make($route, $view)
         {
-            /**
-             * Handle routing and views
-             */
             $url = array_slice(explode("?", $_SERVER['REQUEST_URI']), 0);
 
             if(substr($route, 0, 1) !== '/')
