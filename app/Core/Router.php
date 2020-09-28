@@ -13,15 +13,7 @@
 
         public static function start()
         {
-            $userDefinedRoutes = [
-                'web.php'
-            ];
-
-            foreach($userDefinedRoutes as $file) {
-                if(file_exists(__DIR__.'/../../routes/'.$file)) {
-                    require_once __DIR__.'/../../routes/'.$file;
-                }
-            }
+            require_once __DIR__.'/../../routes/routes.php';
         }
 
         public static function make($route, $view)
