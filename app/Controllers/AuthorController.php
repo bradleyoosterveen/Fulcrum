@@ -3,6 +3,7 @@
 
     namespace Controllers;
 
+    use Models\AuthorModel;
 
     class AuthorController
     {
@@ -12,11 +13,6 @@
          */
         public static function index()
         {
-            return [
-                [
-                    'name' => 'Bradley Oosterveen',
-                    'role' => 'Lead Developer'
-                ]
-            ];
+            return AuthorModel::getAuthors();
         }
     }
