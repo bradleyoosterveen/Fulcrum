@@ -4,4 +4,4 @@
     /**
      * Register your routes here
      */
-    Router::make('', '/pages/index.php');
+    Router::get('', '/pages/index.php');
