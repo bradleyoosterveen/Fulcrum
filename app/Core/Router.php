@@ -8,6 +8,7 @@
     {
         private static $view;
         private static $title;
+        private static $methodAllowed;
 
         private function __construct() {}
 
@@ -22,18 +23,39 @@
 
         }
 
-        public static function make($route, $view)
+        public static function get($route, $view)
+        {
+            if($_SERVER['REQUEST_METHOD'] === 'GET') {
+                Self::$methodAllowed = true;
+                Router::make($route, $view);
+            } else {
+                Self::$methodAllowed = false;
+            }
+
+            return new Router;
+        }
+
+        public static function post($route, $view)
+        {
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                Self::$methodAllowed = true;
+                Router::make($route, $view);
+            } else {
+                Self::$methodAllowed = false;
+            }
+
+            return new Router;
+        }
+
+        private static function make($route, $view)
         {
             $url = array_slice(explode("?", $_SERVER['REQUEST_URI']), 0);
 
             if(substr($route, 0, 1) !== '/')
                 $route = '/' . $route;
 
-            if($url[0] === $route) {
+            if($url[0] === $route)
                 Self::$view = $view;
-            }
-
-            return new Router;
         }
 
         function title($title)
@@ -46,6 +68,11 @@
                 Self::$title .= $separator . $title;
 
             return $this;
+        }
+
+        public static function getMethodAllowed()
+        {
+            return Self::$methodAllowed;
         }
 
         public static function setView($view)
