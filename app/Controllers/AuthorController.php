@@ -14,7 +14,7 @@
         {
             return [
                 [
-                    'name' => 'Dakpaneel',
+                    'name' => 'Bradley Oosterveen',
                     'role' => 'Lead Developer'
                 ]
             ];
