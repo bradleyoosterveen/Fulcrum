@@ -13,7 +13,13 @@
 
         public static function start()
         {
-            require_once __DIR__.'/../../routes/routes.php';
+            $headersAccepted = getallheaders()['Accept'];
+            if(strpos($headersAccepted, 'application/json')) {
+                require_once __DIR__.'/../../routes/api.php';
+            } else {
+                require_once __DIR__.'/../../routes/web.php';
+            }
+
         }
 
         public static function make($route, $view)
