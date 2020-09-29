@@ -4,4 +4,4 @@
     /**
      * Register your routes here
      */
-    Router::make('', '/pages/index.php')->title('Hello there!');
+    Router::get('', '/pages/index.php')->title('Hello there!');
