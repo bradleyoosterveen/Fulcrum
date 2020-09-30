@@ -70,6 +70,17 @@
             return $this;
         }
 
+        function redirect($url, $status = 303)
+        {
+            $this::redirect($url, $status = 303);
+        }
+
+        public static function redirectTo($url, $status = 303)
+        {
+            header('Location: '.$url, true, $status);
+            die;
+        }
+
         public static function getMethodAllowed()
         {
             return Self::$methodAllowed;
