@@ -4,15 +4,12 @@
     namespace Models;
 
 
+    use Core\Database;
+
     class AuthorModel
     {
         public static function getAuthors()
         {
-            return [
-                [
-                    'name' => 'Bradley Oosterveen',
-                    'role' => 'Lead Developer'
-                ]
-            ];
+            return Database::connect()->query("SELECT * FROM author")->execute()->fetchAll();
         }
     }
