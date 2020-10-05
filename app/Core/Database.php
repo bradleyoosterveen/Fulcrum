@@ -13,7 +13,6 @@
 
         private $result;
         private $preparedQuery;
-        private $binds = [];
 
         private function __construct() {}
 
