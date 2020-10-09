@@ -20,7 +20,6 @@
             } else {
                 require_once __DIR__.'/../../routes/web.php';
             }
-
         }
 
         public static function get($route, $view)
