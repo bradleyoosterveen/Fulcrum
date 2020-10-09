@@ -13,11 +13,12 @@
             $this->startTime = microtime(true);
         }
 
-        public static function launch()
+        public static function run()
         {
             Session::start();
             Config::start();
             Router::start();
+            Response::handle();
 
             return new App();
         }

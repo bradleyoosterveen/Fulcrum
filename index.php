@@ -13,9 +13,4 @@
 
     $app->autoload();
 
-    $app->launch();
-
-    /**
-     * Handle response
-     */
-    Core\Response::handle();
+    $app->run();
