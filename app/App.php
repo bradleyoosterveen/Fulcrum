@@ -10,10 +10,11 @@
 
         public static function run()
         {
-            Session::start();
             Config::start();
+            Session::start();
             Router::start();
             Response::handle();
+            Session::removeFlash();
 
             return new App();
         }
