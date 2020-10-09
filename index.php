@@ -16,6 +16,8 @@
 
     $app = new Core\App();
 
+    $app->autoload();
+
     $app->launch();
 
     /**
