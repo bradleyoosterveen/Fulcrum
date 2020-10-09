@@ -25,37 +25,37 @@
 
         public static function get($route, $view)
         {
-            if($_SERVER['REQUEST_METHOD'] === 'GET') {
-                Self::$methodAllowed = true;
-                Router::make($route, $view);
-            } else {
-                Self::$methodAllowed = false;
-            }
+            Router::make($route, $view, "GET");
 
             return new Router;
         }
 
         public static function post($route, $view)
         {
-            if($_SERVER['REQUEST_METHOD'] === 'POST') {
-                Self::$methodAllowed = true;
-                Router::make($route, $view);
-            } else {
-                Self::$methodAllowed = false;
-            }
+            Router::make($route, $view, "POST");
 
             return new Router;
         }
 
-        private static function make($route, $view)
+        private static function make($route, $view, $method)
         {
             $url = array_slice(explode("?", $_SERVER['REQUEST_URI']), 0);
 
             if(substr($route, 0, 1) !== '/')
                 $route = '/' . $route;
 
-            if($url[0] === $route)
+            if($url[0] === $route && self::methodAllowed($method))
                 Self::$view = $view;
+        }
+
+        private static function methodAllowed($method) {
+            if($_SERVER['REQUEST_METHOD'] === $method) {
+                Self::$methodAllowed = true;
+                return true;
+            } else {
+                Self::$methodAllowed = false;
+                return false;
+            }
         }
 
         function title($title)
