@@ -6,12 +6,7 @@
 
     class App
     {
-        private $startTime;
-
-        public function __construct()
-        {
-            $this->startTime = microtime(true);
-        }
+        public function __construct() {}
 
         public static function run()
         {
