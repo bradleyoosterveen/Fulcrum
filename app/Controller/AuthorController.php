@@ -1,14 +1,14 @@
 <?php
 
 
-    namespace Controllers;
+    namespace Controller;
 
-    use Models\AuthorModel;
+    use Model\Author;
 
     class AuthorController
     {
         public static function index()
         {
-            return AuthorModel::getAuthors();
+            return Author::all();
         }
     }

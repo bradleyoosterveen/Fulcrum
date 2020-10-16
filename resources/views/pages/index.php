@@ -1,5 +1,5 @@
 <?php
-    use Controllers\AuthorController;
+    use Controller\AuthorController;
 ?>
 
 <header>

@@ -1,14 +1,13 @@
 <?php
 
 
-    namespace Models;
-
+    namespace Model;
 
     use Core\Database;
 
-    class AuthorModel
+    class Author
     {
-        public static function getAuthors()
+        public static function all()
         {
             return Database::connect()->query("SELECT * FROM author")->execute()->fetchAll();
         }
