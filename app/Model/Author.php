@@ -9,6 +9,6 @@
     {
         public static function all()
         {
-            return Database::connect()->query("SELECT * FROM author")->execute()->fetchAll();
+            return Database::query("SELECT * FROM author")->execute()->fetchAll();
         }
     }

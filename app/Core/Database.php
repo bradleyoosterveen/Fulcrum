@@ -16,7 +16,7 @@
 
         private function __construct() {}
 
-        public static function connect()
+        private static function connect()
         {
             if(empty(SQL_HOST))
                 return false;
@@ -35,11 +35,13 @@
             }
         }
 
-        function query($query, $params = [])
+        public static function query($query, $params = [])
         {
-            $this->preparedQuery = $this->conn->prepare($query);
+            $db = self::connect();
 
-            return $this;
+            $db->preparedQuery = $db->conn->prepare($query);
+
+            return $db;
         }
 
         function bind($params)
