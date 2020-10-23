@@ -2,12 +2,12 @@
     /**
      * Use the Composer autoloader
      */
-    require __DIR__ . '/vendor/autoload.php';
+    require __DIR__ . '/../vendor/autoload.php';
 
     /**
      * You know what? Let's launch Fulcrum
      */
-    require __DIR__ . '/app/App.php';
+    require __DIR__ . '/../app/App.php';
 
     $app = new Core\App();
 
