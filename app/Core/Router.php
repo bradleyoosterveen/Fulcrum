@@ -49,11 +49,9 @@
 
         private static function methodAllowed($method) {
             if($_SERVER['REQUEST_METHOD'] === $method) {
-                Self::$methodAllowed = true;
-                return true;
+                return Self::$methodAllowed = true;
             } else {
-                Self::$methodAllowed = false;
-                return false;
+                return Self::$methodAllowed = false;
             }
         }
 
