@@ -8,7 +8,7 @@
     {
         private static $view;
         private static $title;
-        private static $methodAllowed;
+        private static $methodAllowed = true;
 
         private function __construct() {}
 
