@@ -8,7 +8,7 @@
     {
         public static function handle()
         {
-            if(!Router::getMethodAllowed())
+            if(!Router::getMethodAllowed() && !Router::getView())
                 Router::setView('/errors/405.php')->title('Method now allowed');
 
             if(!Router::getView())
