@@ -47,7 +47,7 @@
         function bind($params)
         {
             foreach ($params as $key => $value)
-                $this->preparedQuery->bindParam(":{$key}", $value);
+                $this->preparedQuery->bindValue(":{$key}", $value);
 
             return $this;
         }
