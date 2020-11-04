@@ -22,8 +22,8 @@ An attempt at a PHP framework.
 ## Getting started
 
 ### Installation
-1. Copy the source code, or create a fork.
-2. Run Composer Install.
+1. Download the source code, or create a fork.
+2. Run `Composer install`.
 3. Run the exampledatabase.sql in your database.
 4. Configure config.ini
 5. Done!
