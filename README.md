@@ -14,7 +14,7 @@
 </p>
 
 ## About the project
-An attempt at a PHP framework.
+This PHP framework can be seen as a compilation of functions that I've had to use for most of my recent projects. It is based on the MVC model and will update throughout it's use as people start finding bugs and useful features.
 
 ### Built with
 * [PHP](https://www.php.net/)
