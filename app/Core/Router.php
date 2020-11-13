@@ -3,6 +3,7 @@
 
     namespace Core;
 
+    use Middleware\Middleware;
 
     class Router
     {
@@ -34,6 +35,14 @@
             Router::make($route, $view, "POST");
 
             return new Router;
+        }
+
+        public static function middleware($middleware, $next)
+        {
+            if(!Middleware::map()->$middleware)
+                return;
+
+            $next();
         }
 
         private static function make($route, $view, $method)
