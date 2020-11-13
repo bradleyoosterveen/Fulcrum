@@ -4,4 +4,7 @@
     /**
      * Register your routes here
      */
-    Router::get('', '/pages/index.php')->title('Hello there!');
+
+    Router::middleware('auth', function() {
+        Router::get('', '/pages/index.php')->title('Hello there!');
+    });
